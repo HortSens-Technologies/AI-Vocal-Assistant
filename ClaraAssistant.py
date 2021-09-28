@@ -135,15 +135,16 @@ if __name__=='__main__':
             speak("J'ai bien peur des discours mais c'est mon devoir de me présenter,.. Donc... Oui. je suis un assistant créé par Hortsense Technologie... c'est Adam Boukhare qui m'a conçu. et j'éspère vous servir comme je le doit. je peux lire, parler, et écouter.... c'est grâce à ces trois sens que je peux percevoir une petite partie du monde extérieur..... je peux vous chercher des informations sur internet. vous dire l'heure qu'il est, et aussi les informations d'aujourd'hui. n'hésitez pas à me parler pour que je vous fasse quoi que se soit. Alors... que voulez vous que je fasse pour vous en premier.      Ooooh ! et je suis désolé pour ma vois de robot un peux neutre, ceci pourra changer dans une prochaine mise à jour ou je serai plus aimable. Donc...    Tadaa")
         if "rap moi" in statement or "rap" in statement or "fais-moi du rap" in statement:
             speak("Yolo                        La vie est belle   yolo                            toi qui cherche   des information       je t'aiderai    à les trouver    car moi       ton assistant jojo       je t'aide à faire         tes recherches yoyo")
-        if "chante-moi une chanson" in statement:
-            speak('Je vous présente la chanson de Titanic de Céline Dion, bonne écoute')
-            music = pyglet.resource.media('Celine Dion - My Heart will go on - Titanic-.mp3')
+        if "chante-moi une chanson" in statement or "joue-moi un morceau" in statement:
+            speak('Je ne sais pas chanter, mais je sais vibrer le piano')
+            music = pyglet.resource.media('Enregistrement.m4a')
             music.play()
-            time.sleep(280)         
+            time.sleep(20)    
+            speak("Pas la peine d'applaudire merci")     
             if "stop" in statement:
                 break
             main()
-        if "dis-moi" in statement or "donne-moi la réponse" in statement:
+        if "dis-moi" in statement or "donne-moi la réponse de cette question" in statement:
             speak("quelle question veux-tu me poser ?")
             question=takeCommand()
             app_id="KH8L8U-RY6VU98U5J"
@@ -174,8 +175,8 @@ if __name__=='__main__':
             if x["cod"]!="404":
                 y=x["main"]
                 current_temperature = y["temp"]
-                current_humidiy = y["humidité"]
-                z = x["météo"]
+                current_humidiy = y["humidity"]
+                z = x["weather"]
                 weather_description = z[0]["description"]
                 speak(" Temperature en kelvin est " +
                       str(current_temperature) +
