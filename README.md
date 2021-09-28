@@ -1,7 +1,7 @@
 # Clara-HortSens-Assistant 1.3 A "AI REALITY ASSISTANT"
    Hello, je suis Clara, votre assistant personnelle, je suis là pour vous faciliter la vie sur internet et aussi pour votre appareil. Je peux interloquer avec vous, chercher sur internet, chanter si vous voulez, jouer pile ou face, répondre aux questions de math si j'entends "dis-moi", vous dire l'heure, et aussi la météo. Donc, que puis-je faire pour vous ? 
 
-![Clara HortSens (2)](https://user-images.githubusercontent.com/87380199/135119855-c139b559-ff1e-424e-b14b-53aa89909a7c.jpg)
+
 ![Clara HortSens (3)](https://user-images.githubusercontent.com/87380199/135121579-d05211db-2c2a-4322-bf92-dad082788d77.jpg)
 ![Clara HortSens (4)](https://user-images.githubusercontent.com/87380199/135122353-55f66b76-3d4b-4120-8674-c57031d4c4e5.jpg)
 ![Clara HortSens (5)](https://user-images.githubusercontent.com/87380199/135122616-16148b88-e207-4e0d-ab91-36e7e1f310d3.jpg)
