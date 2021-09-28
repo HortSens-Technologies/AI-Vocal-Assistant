@@ -92,6 +92,9 @@ if __name__=='__main__':
             print("Je m'appelle Clara Assistant, Clara comme je suis claire dans mes réponses  et assistant car j'aime vous aider.")
         if "dis-moi une blague" in statement:
             speak("Hi        Hi     Vous savez pourquoi les japonais n'ont pas de poney.....       Parce qu'ils sont déjaponé")
+        if "tu es cool" in statement or "tu es top" in statement or "tu es la meilleur" in statement:
+            speak("Oh merci beaucoup, vou me faites rougir, mais je n'ai pas de joues")
+            print("🥰")
         if "au revoir" in statement or "ok bye" in statement or "stop" in statement:
             speak('A bientôt jéspère')
             print('A bientôt')
@@ -201,3 +204,4 @@ if __name__=='__main__':
             speak("Ok , votre ordi s'éteindra dans 10 secondes, soyez sûr d'avoir fermé toutes les applications ")
             subprocess.call(["shutdown", "/l"])
 time.sleep(3)
+
