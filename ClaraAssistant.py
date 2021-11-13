@@ -15,16 +15,6 @@ import googletrans
 import pyglet
 import argparse
 import py2exe
-try     :
-
-    import win32gui, win32con;
-
-    frgrnd_wndw = win32gui.GetForegroundWindow();
-    wndw_title  = win32gui.GetWindowText(frgrnd_wndw);
-    if wndw_title.endswith("python.exe"):
-        win32gui.ShowWindow(frgrnd_wndw, win32con.SW_HIDE);
-except  :
-    pass
 from gooey import Gooey, GooeyParser
 @Gooey(language='french')
 def main():
@@ -60,7 +50,7 @@ def takeCommand():
     with sr.Microphone() as source:
         print("J'écoute...")
         audio=r.listen(source)
-
+        
         try:
             statement=r.recognize_google(audio,language='fr-fr')
             print(f"J'ai entendu:{statement}\n")
@@ -77,7 +67,7 @@ if __name__=='__main__':
     
 
     while True:
-        speak("Comment puis-je vous aider ?")
+        speak("Dites-moi ce que vous voulez pour vous aider ?")
         statement = takeCommand().lower()
         if statement==0:
             continue
@@ -138,6 +128,9 @@ if __name__=='__main__':
             speak("J'ai bien peur des discours mais c'est mon devoir de me présenter,.. Donc... Oui. je suis un assistant créé par Hortsense Technologie... c'est Adam Boukhare qui m'a conçu. et j'éspère vous servir comme je le doit. je peux lire, parler, et écouter.... c'est grâce à ces trois sens que je peux percevoir une petite partie du monde extérieur..... je peux vous chercher des informations sur internet. vous dire l'heure qu'il est, et aussi les informations d'aujourd'hui. n'hésitez pas à me parler pour que je vous fasse quoi que se soit. Alors... que voulez vous que je fasse pour vous en premier.      Ooooh ! et je suis désolé pour ma vois de robot un peux neutre, ceci pourra changer dans une prochaine mise à jour ou je serai plus aimable. Donc...    Tadaa")
         if "rap moi" in statement or "rap" in statement or "fais-moi du rap" in statement:
             speak("Yolo                        La vie est belle   yolo                            toi qui cherche   des information       je t'aiderai    à les trouver    car moi       ton assistant jojo       je t'aide à faire         tes recherches yoyo")
+        if "aujourd'hui c'est mon anniversaire" in statement or "c'est mon anniversaire" in statement or "c'est mon anniv" in statement or "ahjourd'hui c'est mon anniv" in statement:
+            speak("Ooh                      joyeux anniversaire      et je pense que j'ai préparé d'avance un cadeau, tenez cette émoji cadeau")
+            print("🎁")
         if "chante-moi une chanson" in statement or "joue-moi un morceau" in statement:
             speak('Je ne sais pas chanter, mais je sais vibrer le piano')
             music = pyglet.resource.media('Enregistrement.m4a')
@@ -167,32 +160,11 @@ if __name__=='__main__':
             projectpath = 'C:\Program Files (x86)\Microsoft Office\root\Office16\start WINWORD.EXE' 
  
             subprocess.check_output( ('start',projectpath) , shell=True )        
-        elif "météo" in statement or "quelle est la météo" in statement or "quelles sont les données météorologiques" in statement:
-            api_key="KH8L8U-RY6VU98U5J"
-            base_url="https://api.openweathermap.org/data/2.5/weather?"
-            speak("De quelle ville voulez vous savoir la météo ?")
-            city_name=takeCommand()
-            complete_url=base_url+"appid="+api_key+"&q="+city_name
-            response = requests.get(complete_url)
-            x=response.json()
-            if x["cod"]!="404":
-                y=x["main"]
-                current_temperature = y["temp"]
-                current_humidiy = y["humidity"]
-                z = x["weather"]
-                weather_description = z[0]["description"]
-                speak(" Temperature en kelvin est " +
-                      str(current_temperature) +
-                      "\n le pourcentage d'humidité est " +
-                      str(current_humidiy) +
-                      "\n description  " +
-                      str(weather_description))
-                print("  La temperature en kelvin = " +
-                      str(current_temperature) +
-                      "\n le pourcentage d'humidité (in percentage) = " +
-                      str(current_humidiy) +
-                      "\n description = " +
-                      str(weather_description))
+        elif "la météo" in statement or "quelle est la météo " in statement or "quelles sont les données météorologiques" in statement:
+            statement = statement.replace("météo de", "")
+            webbrowser.open_new_tab("https://www.google.com/search?q=m%C3%A9t%C3%A9o&oq=meteo&aqs=chrome.1.69i57j0i512j0i433i512l4j69i60l2.3120j1j7&sourceid=chrome&ie=UTF-8")
+            speak("Voilà la météo d'aujourd'hui")
+            time.sleep(5)
         elif "pile ou face" in statement:
             piece=random.randint(1,2)
             if piece == 1:
