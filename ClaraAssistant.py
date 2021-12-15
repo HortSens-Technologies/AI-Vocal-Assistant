@@ -9,21 +9,25 @@ import subprocess
 import wolframalpha
 import json
 import requests
-from distutils.core import setup
 import random
 import googletrans
 import pyglet
 import argparse
 import py2exe
-from gooey import Gooey, GooeyParser
-@Gooey(language='french')
-def main():
-    softPath="/usr/bin/soft"
-    parser = argparse.ArgumentParser(description="Clara Assistant est là pour vous !  Appuyez sur démmarer pour que je m'active 😉.")
-    parser = argparse.ArgumentParser(description="Pour chercher du contenu sur Internet, dites seulement 'cherche-moi',  pour me poser des... questions de maths dites 'dis-moi',  puis vous pouvez me parler sur tout à votre guise😉")
-    parser.parse_args()
- 
-main()
+from tkinter import *
+from tkinter import ttk
+root = Tk()
+root.geometry("200x200")
+root.iconbitmap('HortSens (5).ico')
+root.title('HortSens Assistant')
+root.geometry('1x1')
+root['bg'] = '#212F3C'
+root.minsize(885,400)
+frm = ttk.Frame(root, padding=10)
+frm.grid()
+ttk.Label(frm, text="Hello, Je suis Clara HortSens Assistant, vous devez quitter l'application pour m'activer en arrière plan. Et pour me quitter définitivement, dites simplement 'Au revoir'").grid(column=1, row=3)
+ttk.Button(frm, text="Appuyez ou quittez pour que je m'active en arrière plan", command=root.destroy).grid(column=1, row=0)
+root.mainloop()
 
 
 
@@ -61,13 +65,12 @@ def takeCommand():
         return statement
 
 print("Préparation...")
-speak("Je suis Ravi de vous voir")
 wishMe()
 if __name__=='__main__':
     
 
     while True:
-        speak("Dites-moi ce que vous voulez pour vous aider ?")
+        speak("que puis-je faire pour vous ?")
         statement = takeCommand().lower()
         if statement==0:
             continue
@@ -80,8 +83,8 @@ if __name__=='__main__':
         if "comment tu t'appelles" in statement:
             speak("Je m'appelle Clara Assistant, Clara comme je suis claire dans mes réponses  et assistant car j'aime vous aider.")
             print("Je m'appelle Clara Assistant, Clara comme je suis claire dans mes réponses  et assistant car j'aime vous aider.")
-        if "dis-moi une blague" in statement:
-            speak("Hi        Hi     Vous savez pourquoi les japonais n'ont pas de poney.....       Parce qu'ils sont déjaponé")
+        if "dis-moi une blague" or "raconte-moi une blague"in statement:
+            speak("Hiiii       Hiiiiiiii     Vous savez pourquoi les japonais n'ont pas de poney.....       Parce qu'ils sont déjaponné")
         if "tu es cool" in statement or "tu es top" in statement or "tu es la meilleur" in statement:
             speak("Oh merci beaucoup, vou me faites rougir, mais je n'ai pas de joues")
             print("🥰")
@@ -107,6 +110,9 @@ if __name__=='__main__':
             webbrowser.open("www.google.com")
             speak("google est maintenant ouvert, amusez vous bien")
             time.sleep(5)
+        elif 'ouvre youtube' in statement:
+            webbrowser.open("www.youtube.com")
+            speak("YouTube est maintenant ouvert, amusez-vous bien")
         elif 'ouvre gmail' in statement or 'gmail' in statement or "mail" in statement:
             webbrowser.open_new_tab("gmail.com")
             speak("Google Mail est maintenant ouvert")
@@ -176,4 +182,3 @@ if __name__=='__main__':
             speak("Ok , votre ordi s'éteindra dans 10 secondes, soyez sûr d'avoir fermé toutes les applications ")
             subprocess.call(["shutdown", "/l"])
 time.sleep(3)
-
