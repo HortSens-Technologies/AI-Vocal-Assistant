@@ -9,6 +9,7 @@ import subprocess
 import wolframalpha
 import json
 import requests
+import sys
 import random
 import googletrans
 import pyglet
@@ -16,18 +17,22 @@ import argparse
 import py2exe
 from tkinter import *
 from tkinter import ttk
-root = Tk()
-root.geometry("200x200")
-root.iconbitmap('HortSens (5).ico')
-root.title('HortSens Assistant')
-root.geometry('1x1')
-root['bg'] = '#212F3C'
-root.minsize(885,400)
-frm = ttk.Frame(root, padding=10)
-frm.grid()
-ttk.Label(frm, text="Hello, Je suis Clara HortSens Assistant, vous devez quitter l'application pour m'activer en arrière plan. Et pour me quitter définitivement, dites simplement 'Au revoir'").grid(column=1, row=3)
-ttk.Button(frm, text="Appuyez ou quittez pour que je m'active en arrière plan", command=root.destroy).grid(column=1, row=0)
-root.mainloop()
+from tkinter import messagebox
+top = Tk()
+C = Canvas(top, bg="blue", height=250, width=300)
+filename = PhotoImage(file = "Quittez pour que je m'active en arrière plan ! (1).png")
+background_label = Label(top, image=filename)
+background_label.place(x=0, y=0, relwidth=1, relheight=1)
+
+C.pack()
+top.geometry("200x200")
+top.iconbitmap('HortSens (5).ico')
+top.title('HortSens Assistant')
+top.geometry('1x1')
+top['bg'] = '#212F3C'
+top.minsize(880,600)
+top.wm_maxsize(880,600)
+top.mainloop()
 
 
 
@@ -70,21 +75,21 @@ if __name__=='__main__':
     
 
     while True:
-        speak("que puis-je faire pour vous ?")
+        speak("Je suis votre assistant personel HortSense Assistant, que puis-je faire pour vous ?")
         statement = takeCommand().lower()
         if statement==0:
             continue
-        if "salut" in statement or "bonjour" in statement:
-            speak("Bonjour, je serai enchanté de vous aider")
-            print("Bonjour, je serai enchanté de vous aider.")
+        if "salut" in statement or "bonjour" in statement or "bonsoir" in statement:
+            speak("Salut, je serai enchanté de vous aider")
+            print("Salut, je serai enchanté de vous aider.")
         if "ello" in statement or "hello" in statement:
-            speak("Hello, je suis ravie de vous aider")
-            print("Hello, je suis ravi de vous aider")
+            speak("Hello, je serais ravie de vous aider")
+            print("Hello, je serais ravie de vous aider")
         if "comment tu t'appelles" in statement:
-            speak("Je m'appelle Clara Assistant, Clara comme je suis claire dans mes réponses  et assistant car j'aime vous aider.")
-            print("Je m'appelle Clara Assistant, Clara comme je suis claire dans mes réponses  et assistant car j'aime vous aider.")
-        if "dis-moi une blague" or "raconte-moi une blague"in statement:
-            speak("Hiiii       Hiiiiiiii     Vous savez pourquoi les japonais n'ont pas de poney.....       Parce qu'ils sont déjaponné")
+            speak("Je m'appelle Hortsense Assistant, et je suis là pour vous faciliter la vie avec la technologie")
+            print("Je m'appelle HortSens Assistant.")
+        if "que sais-tu faire" in statement or "que peux-tu faire" in statement:
+            speak("Je peux chercher sur internet. Interloquer avec vous si vous voulez. Vous dire l'heure qu'il est. Vous informer de la météo et des informations du jour. Et je peux aussi jouer du piano.    Je pense. Et choisir au hasard si c'est pile ou si c'est face. Donc.")
         if "tu es cool" in statement or "tu es top" in statement or "tu es la meilleur" in statement:
             speak("Oh merci beaucoup, vou me faites rougir, mais je n'ai pas de joues")
             print("🥰")
