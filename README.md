@@ -1,11 +1,13 @@
-# Clara-HortSens-Assistant 1.3 A "AI REALITY ASSISTANT"
-   Hello, je suis Clara, votre assistant personnelle, je suis là pour vous faciliter la vie sur internet et aussi pour votre appareil. Je peux interloquer avec vous, chercher sur internet, chanter si vous voulez, jouer pile ou face, répondre aux questions de math si j'entends "dis-moi", vous dire l'heure, et aussi la météo. Donc, que puis-je faire pour vous ? 
+# HortSens AI Assistant"
+   This is the open source source code of the vocal assistant HortSens AI Assistant, made by passionate persons, to bring the best of speeches.
+   HortSens AI Assistant is almost free to contribute on, just share your code with and start making the unexpected!
+   The vocal assistant use a cmd console, commands are given by the user's voice, and the software respond to these commands.
+   Well enjoy you session !
 
 
-![Clara HortSens (3)](https://user-images.githubusercontent.com/87380199/135121579-d05211db-2c2a-4322-bf92-dad082788d77.jpg)
-![Clara HortSens (4)](https://user-images.githubusercontent.com/87380199/135122353-55f66b76-3d4b-4120-8674-c57031d4c4e5.jpg)
-![Clara HortSens (5)](https://user-images.githubusercontent.com/87380199/135122616-16148b88-e207-4e0d-ab91-36e7e1f310d3.jpg)
-![Clara HortSens (6)](https://user-images.githubusercontent.com/87380199/135122922-4fa57557-9b98-48b0-a06c-a5ac6361cacb.jpg)
 
-![Clara HortSens (7)](https://user-images.githubusercontent.com/87380199/135123444-5dae0119-4307-4204-a6e5-a093733e9927.jpg)
+<img width="960" alt="Capture1" src="https://user-images.githubusercontent.com/87380199/161316865-2da6892c-2c5d-4571-aa9d-bd00edcbef2a.png">
 
+<img width="698" alt="Capture d’écran 2021-12-19 152238" src="https://user-images.githubusercontent.com/87380199/161316876-c3a3b0d2-b5f5-4a45-8a25-ad9d6bdad778.png">
+<<img width="674" alt="Capture d’écran 2022-04-01 175643" src="https://user-images.githubusercontent.com/87380199/161317025-4400352e-d31d-415b-bc50-ff8181c79efe.png">
+img width="711" alt="Capture d’écran 2021-12-19 152150" src="https://user-images.githubusercontent.com/87380199/161316881-61461dbc-cbb4-4902-b6f5-028bc6d38cdd.png">
